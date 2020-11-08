@@ -1,4 +1,4 @@
-module imgconv
+module github.com/TakahiroSato/imgconv
 
 go 1.15
 
