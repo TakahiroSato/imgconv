@@ -23,6 +23,7 @@ type convertedImg struct {
 // SaveAsBmp : bmpエンコードして指定パスに保存
 func (d convertedImg) SaveAsBmp(path string) {
 	destImg, err := os.Create(path)
+	defer destImg.Close()
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
@@ -32,6 +33,7 @@ func (d convertedImg) SaveAsBmp(path string) {
 
 func (d convertedImg) SaveAsPng(path string) {
 	destImg, err := os.Create(path)
+	defer destImg.Close()
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
